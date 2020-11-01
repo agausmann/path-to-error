@@ -119,6 +119,11 @@ impl Track {
         self.path.unwrap_or_else(Path::empty)
     }
 
+    /// Whether an error has been caught.
+    pub fn is_triggered(&self) -> bool {
+        self.path.is_some()
+    }
+
     #[inline]
     fn trigger<E>(&mut self, chain: &Chain, err: E) -> E {
         self.trigger_impl(chain);
