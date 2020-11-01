@@ -103,6 +103,7 @@ impl<E: StdError + 'static> StdError for Error<E> {
 /// You don't need this if you are using `serde_path_to_error::deserializer`. If
 /// you are managing your own `Deserializer`, see the usage example on
 /// [`Deserializer`].
+#[derive(Debug)]
 pub struct Track {
     path: Option<Path>,
 }
