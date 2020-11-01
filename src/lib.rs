@@ -116,6 +116,7 @@ impl Track {
     /// Gets path at which the error occurred. Only meaningful after we know
     /// that an error has occurred. Returns an empty path otherwise.
     pub fn path(self) -> Path {
+        eprintln!("error path present: {}", self.path.is_some());
         self.path.unwrap_or_else(Path::empty)
     }
 
